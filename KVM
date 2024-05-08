@@ -1,0 +1,10 @@
+sudo apt update
+sudo apt upgrade
+egrep -c '(vmx/svm)'/proc/cpuinfo
+kvm -ok
+download debian
+sudo apt install -y qemu-kvm virt-manager libvirt-daemon-system virtinst libvirt-clients bridge-utils
+sudo systemctl start libvirtd
+sudo systemctl status libvirtd
+sudo usermod -aG kvm SUSER
+sudo usermod -aG libvirt SUSER
